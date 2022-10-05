@@ -25,7 +25,7 @@ function Navbar() {
     const [addUser,setAddUser] = useState<string | null>(null)
 
     function handleGroupCreate(){
-        axios.post('/groupChat',{
+        axios.post(`${process.env.REACT_APP_API_URL}/groupChat`,{
             creator:user
         }).then(res=>{
             addGroupChat(res.data)
@@ -34,7 +34,7 @@ function Navbar() {
 
     function handleUserSearch(e:React.KeyboardEvent){
         if(e.key==='Enter' && findUser.length > 2){
-            axios.post(`/users/find`,{
+            axios.post(`${process.env.REACT_APP_API_URL}/users/find`,{
                 requester: user?.username,
                 searchTerm: findUser
             })
@@ -49,7 +49,7 @@ function Navbar() {
 
     function handleAddUserToGroupChat(groupChatId:string){
         if(addUser && groupChatId){
-            axios.put(`/groupChat/${groupChatId}/members/add`,{
+            axios.put(`${process.env.REACT_APP_API_URL}/groupChat/${groupChatId}/members/add`,{
                 userId:addUser
             })
             .then(res=>{

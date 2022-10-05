@@ -87,7 +87,7 @@ export function UserProvider({children}:userProviderProps){
     const [isFetching,setIsFetching] = useState(true)
 
     useEffect(():(()=>void)=>{
-        socket.current = io('http://localhost:5000')
+        socket.current = io('https://chat-app-api-urzc.onrender.com')
         socket.current.on("receive-msg",(msg:IMessage,chatId:string)=>{
 
             setNewMessage(msg)

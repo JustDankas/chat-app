@@ -119,12 +119,8 @@ function ChatMain({enableSettings}:IChatMain) {
 
 function toReadableDate(date:Date){
     const tmp = new Date(date)
-    const year = tmp.getFullYear()
-    const month = tmp.getMonth()
-    const day = tmp.getDay()
-    const hours = tmp.getHours()
-    const mins = tmp.getMinutes()
-    return `${formatTime(day)}-${formatTime(month)}-${year} ${hours}:${mins} ${hours>12?'pm':'am'}`
+    // return `${formatTime(day+1)}-${formatTime(month+1)}-${year} ${formatTime(hours)}:${formatTime(minutes)} ${hours>12?'pm':'am'}`
+    return `${tmp}`
 }
 
 function formatTime(number:number){

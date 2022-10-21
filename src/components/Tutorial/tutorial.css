@@ -1,0 +1,76 @@
+@keyframes drop-down {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.tutorial-whole-c {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tutorial-c {
+  position: absolute;
+  z-index: 1000;
+  background-color: #38598b;
+  padding: 1.5rem;
+  font-size: 1.75rem;
+  animation-name: drop-down;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-delay: 400ms;
+  color: #fff;
+  box-shadow: 0 0 30px 3px #38598b;
+}
+
+.show-btn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.tutorial-c h2 {
+}
+
+.tutorial-c h3 {
+}
+
+.tutorial-c section {
+  margin-left: 2rem;
+}
+.tutorial-c li {
+  margin: 0.75rem 0;
+}
+.tutorial-c span {
+  color: black;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1000px) {
+  .tutorial-c {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .tutorial-c {
+    font-size: 1rem;
+    padding: 0.25rem;
+  }
+}
